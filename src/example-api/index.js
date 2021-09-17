@@ -13,7 +13,7 @@ export default () => {
     
     let html = `<h2>API RICK MORTY</h2><div class="row align-items-start">`;
     
-    const drawData = getData$.subscribe( subs => {
+    getData$.subscribe( subs => {
 
         for (const data of subs) {
             //console.log('data : ',data);
@@ -36,5 +36,5 @@ export default () => {
         CONTAINER.innerHTML = html;
     });
 
-    const dataApi = getData$.subscribe( observer );
+    getData$.subscribe( observer );
 }
