@@ -5,6 +5,7 @@ export default () => {
     const obs$ = new Observable( subs => {
         subs.next("Hola");
         subs.next(true);
+        subs.next([1,2,3,4,5,6])
         subs.next(function(){})
         subs.next({
             name: 'bruce',
@@ -24,7 +25,8 @@ export default () => {
         },4000)
     })
 
-    const subscribe = obs$.subscribe(observer)
+    const subscribe = obs$.subscribe(observer);
+    
     setInterval(() => {
         subscribe.unsubscribe();
     },8000)
